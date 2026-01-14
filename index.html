@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Gemini AI Agent IDE</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PrismJS Theme (One Dark) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-one-dark.min.css" rel="stylesheet" />
+    <!-- Fonts: Sarabun (UI) & JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Sarabun', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              editor: '#282c34', // One Dark background
+              gray: {
+                750: '#2d3748', // Custom darks
+                850: '#1a202c',
+                900: '#111827',
+                950: '#0B0F19', // Softer black for long usage
+              }
+            },
+            keyframes: {
+              fadeIn: { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+              slideUp: { '0%': { transform: 'translateY(10px)', opacity: '0' }, '100%': { transform: 'translateY(0)', opacity: '1' } },
+              zoomIn: { '0%': { transform: 'scale(0.95)', opacity: '0' }, '100%': { transform: 'scale(1)', opacity: '1' } },
+              slideInRight: { '0%': { transform: 'translateX(100%)' }, '100%': { transform: 'translateX(0)' } }
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.2s ease-out forwards',
+              'slide-up': 'slideUp 0.3s ease-out forwards',
+              'zoom-in': 'zoomIn 0.2s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.3s ease-out forwards'
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Smooth Scrolling & Base */
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: 'Sarabun', sans-serif;
+      }
+
+      /* Custom scrollbar for code preview - Slim & Dark */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563; 
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6b7280; 
+      }
+      
+      /* PrismJS adjustments for Editor Feel */
+      pre[class*="language-"] {
+        margin: 0 !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        text-shadow: none !important;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+      }
+
+      /* Mobile fix for 100vh */
+      .h-dvh {
+        height: 100vh; /* Fallback */
+        height: 100dvh;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@0.294.0",
+    "recharts": "https://esm.sh/recharts@2.12.0",
+    "@google/genai": "https://esm.sh/@google/genai@0.1.1",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "prismjs": "https://esm.sh/prismjs@1.29.0",
+    "@babel/standalone": "https://esm.sh/@babel/standalone@7.23.6",
+    "jszip": "https://esm.sh/jszip@3.10.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-200 overflow-hidden selection:bg-blue-500/30">
+    <div id="root" class="h-dvh flex flex-col"></div>
+  </body>
+</html>

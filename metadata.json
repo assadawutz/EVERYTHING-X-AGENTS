@@ -1,0 +1,5 @@
+{
+  "name": "Gemini AI Agent IDE",
+  "description": "A comprehensive AI Agent GUI for generating, previewing, and styling React components using Gemini models.",
+  "requestFramePermissions": []
+}
